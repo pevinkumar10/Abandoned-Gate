@@ -1,64 +1,121 @@
-# The Abandoned Gate
+<p align="center">
+  <img src="assets/banner.png" alt="The Abandoned Gate Banner" width="80%"/>
+</p>
 
-## Category
-**Web Exploitation** (File Upload → RCE → Privilege Escalation)
+<h1 align="center">🚪 The Abandoned Gate</h1>
 
-## Difficulty
-**Medium**
+<p align="center">
+  A web exploitation CTF challenge focused on insecure file upload leading to RCE and privilege escalation.
+</p>
 
----
-
-## Challenge Description
-This challenge focuses on identifying and exploiting a file upload vulnerability that leads to Remote Code Execution (RCE) and privilege escalation. The application includes an insecure file upload mechanism that can be abused to gain unauthorized access to the system. Participants must locate the vulnerable upload point, exploit it to obtain a shell, and escalate their privileges to gain full control over the system.
----
-
-## Objectives
-1. **Find the Abandoned Gate[file upload functionality]** 
-2. **upload the exploit [php]** .
-3. **Trigger the exploit to Take a Reverse Shell** – Exploit the vulnerability to gain a remote shell.
-4. **Escalate Privileges to root** – Gain root access through privilege escalation.
+<p align="center">
+  <img src="https://img.shields.io/badge/Category-Web%20Exploitation-red?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Exploit-File%20Upload%20RCE-orange?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Difficulty-Medium-yellow?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Platform-Docker-blue?style=for-the-badge" />
+</p>
 
 ---
 
-## Setup Dependency
-- Docker
+## 📌 Challenge Overview
 
-Ensure you have **Docker** installed on your system. You can download it from [Docker's official site](https://docs.docker.com/get-started/get-docker/).
+**The Abandoned Gate** is a deliberately vulnerable web application designed for CTF practice.
 
-- Clone this repo by
-```
+It simulates a real-world scenario where:
+- A file upload feature is misconfigured
+- Remote code execution is possible
+- Privilege escalation leads to full system compromise
+
+---
+
+## 🎯 Objectives
+
+1. 🔍 Locate the hidden file upload functionality (Abandoned Gate)
+2. 📤 Upload a malicious PHP payload
+3. 💣 Trigger Remote Code Execution (RCE) and obtain a reverse shell
+4. ⬆️ Escalate privileges to root access
+
+---
+
+## ⚙️ Requirements
+
+- Docker installed  
+  👉 https://docs.docker.com/get-started/get-docker/
+
+---
+
+## 📥 Installation
+
+### Clone Repository
+```bash
 git clone https://github.com/PkTheHacker10/ctf-dev.git
-```
+cd ctf-dev
+````
+
 ---
 
-## Setup Guide
+## 🚀 Setup Guide
 
-### Method 1: Automated Setup
-Run the provided `setup.sh` script to automate the container build and execution:
-```sh
-cd ctf-dev/challenge
+### ⚡ Method 1: Automated Setup
+
+```bash
+cd challenge
 sudo ./setup.sh
 ```
-## Method 2: Manual Deployment
-Follow these steps to set up the challenge manually:
-```
-cd ctf-dev/challenge/web
-sudo docker build -t my-ctf .
-sudo docker run -d --name ctf-room my-ctf
-```
-You should find your docker ip to access the web to test this vulnerability
-you can get it by this command
 
-```
-sudo docker exec ctf-room ifconfig
-```
-Now you can be able to access it via " http://container-ip " from your host
+---
 
-## Steps to remove stop and remove container 
-```
-sudo docker stop ctf-room 
-sudo docker rm ctf-room
+### 🛠 Method 2: Manual Setup
+
+```bash
+cd challenge/web
+sudo docker build -t abandoned-gate .
+sudo docker run -d --name ctf-gate abandoned-gate
 ```
 
-## Detailed Walkthough 
-You can read the walkthrough for challenge solution from WALKTHROUGH.md
+---
+
+## 🌐 Accessing the Challenge
+
+Find container IP:
+
+```bash
+sudo docker exec ctf-gate ifconfig
+```
+
+Then open in browser:
+
+```
+http://container-ip
+```
+
+---
+
+## 🧹 Stop & Remove Container
+
+```bash
+sudo docker stop ctf-gate
+sudo docker rm ctf-gate
+```
+
+---
+
+## 📖 Walkthrough
+
+A full solution guide is available in:
+
+```
+WALKTHROUGH.md
+```
+
+---
+
+## ⚠️ Disclaimer
+
+This project is for **educational and ethical hacking practice only**.
+
+Do not deploy in production or attack unauthorized systems.
+
+---
+
+## 🏴 Happy Hacking 🚪
