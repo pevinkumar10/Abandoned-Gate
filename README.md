@@ -1,8 +1,4 @@
-<p align="center">
-  <img src="assets/banner.png" alt="The Abandoned Gate Banner" width="80%"/>
-</p>
-
-<h1 align="center">🚪 The Abandoned Gate</h1>
+<h1 align="center">The Abandoned Gate</h1>
 
 <p align="center">
   A web exploitation CTF challenge focused on insecure file upload leading to RCE and privilege escalation.
